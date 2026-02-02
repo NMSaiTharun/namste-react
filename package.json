@@ -1,0 +1,34 @@
+{
+  "name": "namste-react",
+  "version": "1.0.0",
+  "description": "This is React Learning by Sai Tharun",
+  "keywords": [
+    "react"
+  ],
+  "homepage": "https://github.com/NMSaiTharun/namste-react#readme",
+  "bugs": {
+    "url": "https://github.com/NMSaiTharun/namste-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NMSaiTharun/namste-react.git"
+  },
+  "license": "ISC",
+  "author": "Sai Tharun",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.3"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "browserslist":[
+    "last 2 chrome version"
+  ]
+}
