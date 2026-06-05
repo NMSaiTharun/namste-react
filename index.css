@@ -1,3 +1,36 @@
-#heading1,#heading3{
-    color:orange;
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid orange;
+}
+.logo {
+  width: 150px;
+}
+.nav-items > ul {
+  display: flex;
+  list-style-type: none;
+}
+.nav-items > ul > li {
+  padding: 10px;
+  margin: 10px;
+  font-size: 30px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.res-card {
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  height: auto;
+  border: 1px solid black;
+  word-wrap: break-word;
+}
+.res-card:hover {
+  border: 1px solid orange;
+  cursor: pointer;
+}
+.search {
+  padding: 10px;
+}
+.res-logo {
+  width: 100%;
 }

@@ -722,56 +722,302 @@ $parcel$ReactRefreshHelpers$5fe5.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
-const heading = /*#__PURE__*/ (0, _reactDefault.default).createElement("h1", {
-    id: "heading",
-    xyz: "abc"
-}, "Hello World from React!");
+var _header = require("./src/components/Header");
+var _headerDefault = parcelHelpers.interopDefault(_header);
+var _body = require("./src/components/Body");
+var _bodyDefault = parcelHelpers.interopDefault(_body);
+// const heading = React.createElement(
+//   "h1",
+//   { id: "heading", xyz: "abc" },
+//   "Hello World from React!",
+// );
+// // JSX is HTML-like syntax used in React to describe the UI structure.
+// // JSX (transpiled before it reaches the JS) - PARCEL - BABEL
+// // JSX => React.createElement =>React Element - JS Object => HTMLElement(DOM)
+// // React Element
+// const TitleComponent = (
+//   <h1 id="heading" xyz="abc" className="head" tabIndex="5">
+//     Hello World from JSX!
+//   </h1>
+// );
+// // React Functional Component
+// // Component Composition - A component can be used inside another component
+// const FunctionalComponent = function () {
+//   return (
+//     <div id="container">
+//       {TitleComponent}
+//       <h1>React Functional Component </h1>
+//       <ArrowFunctionalComponent2></ArrowFunctionalComponent2>
+//       <ArrowFunctionalComponent2 />
+//       {ArrowFunctionalComponent2()}
+//     </div>
+//   );
+// };
+// const number = 13;
+// const ArrowFunctionalComponent2 = () => (
+//   <div id="container">
+//     <h2>Sum of 100 and 200 is {100 + 200}</h2>
+//     {TitleComponent}
+//     {TitleComponent}
+//     <h1>React Functional Component </h1>
+//   </div>
+// );
+// console.log(TitleComponent);
+// console.log(FunctionalComponent);
+const AppLayout = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "app",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 51,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 52,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "app.js",
+        lineNumber: 50,
+        columnNumber: 5
+    }, undefined);
+};
+_c = AppLayout;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
-root.render(heading);
-console.log(heading);
-const parent = /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
-    id: "parent"
-}, [
-    /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
-        "id": "child1",
-        key: "child1"
-    }, [
-        /*#__PURE__*/ (0, _reactDefault.default).createElement("h1", {
-            "id": "heading1",
-            key: "h-1"
-        }, "Iam h1 tag"),
-        /*#__PURE__*/ (0, _reactDefault.default).createElement("h2", {
-            id: "heading2",
-            key: "h-2"
-        }, "Im h2 tag")
-    ]),
-    /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
-        id: "child2",
-        key: "child2"
-    }, [
-        /*#__PURE__*/ (0, _reactDefault.default).createElement("h1", {
-            id: "heading3",
-            key: "h-1-3"
-        }, "Iam h1 tag"),
-        /*#__PURE__*/ (0, _reactDefault.default).createElement("h2", {
-            id: "heading4",
-            key: "h-1-4"
-        }, "Im h2 tag")
-    ])
-]);
-//const root=ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
+    fileName: "app.js",
+    lineNumber: 57,
+    columnNumber: 13
+}, undefined));
+var _c;
+$RefreshReg$(_c, "AppLayout");
 
   $parcel$ReactRefreshHelpers$5fe5.postlude(module);
 } finally {
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"jMk1U","react-dom/client":"hrvwu","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"jMk1U":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","react-dom/client":"hrvwu","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","./src/components/Header":"3PJ6N","./src/components/Body":"loQlg"}],"dVPUn":[function(require,module,exports,__globalThis) {
+'use strict';
+module.exports = require("ee51401569654d91");
+
+},{"ee51401569654d91":"gnlQf"}],"gnlQf":[function(require,module,exports,__globalThis) {
+/**
+ * @license React
+ * react-jsx-dev-runtime.development.js
+ *
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+(function() {
+    function getComponentNameFromType(type) {
+        if (null == type) return null;
+        if ("function" === typeof type) return type.$$typeof === REACT_CLIENT_REFERENCE ? null : type.displayName || type.name || null;
+        if ("string" === typeof type) return type;
+        switch(type){
+            case REACT_FRAGMENT_TYPE:
+                return "Fragment";
+            case REACT_PROFILER_TYPE:
+                return "Profiler";
+            case REACT_STRICT_MODE_TYPE:
+                return "StrictMode";
+            case REACT_SUSPENSE_TYPE:
+                return "Suspense";
+            case REACT_SUSPENSE_LIST_TYPE:
+                return "SuspenseList";
+            case REACT_ACTIVITY_TYPE:
+                return "Activity";
+        }
+        if ("object" === typeof type) switch("number" === typeof type.tag && console.error("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."), type.$$typeof){
+            case REACT_PORTAL_TYPE:
+                return "Portal";
+            case REACT_CONTEXT_TYPE:
+                return type.displayName || "Context";
+            case REACT_CONSUMER_TYPE:
+                return (type._context.displayName || "Context") + ".Consumer";
+            case REACT_FORWARD_REF_TYPE:
+                var innerType = type.render;
+                type = type.displayName;
+                type || (type = innerType.displayName || innerType.name || "", type = "" !== type ? "ForwardRef(" + type + ")" : "ForwardRef");
+                return type;
+            case REACT_MEMO_TYPE:
+                return innerType = type.displayName || null, null !== innerType ? innerType : getComponentNameFromType(type.type) || "Memo";
+            case REACT_LAZY_TYPE:
+                innerType = type._payload;
+                type = type._init;
+                try {
+                    return getComponentNameFromType(type(innerType));
+                } catch (x) {}
+        }
+        return null;
+    }
+    function testStringCoercion(value) {
+        return "" + value;
+    }
+    function checkKeyStringCoercion(value) {
+        try {
+            testStringCoercion(value);
+            var JSCompiler_inline_result = !1;
+        } catch (e) {
+            JSCompiler_inline_result = !0;
+        }
+        if (JSCompiler_inline_result) {
+            JSCompiler_inline_result = console;
+            var JSCompiler_temp_const = JSCompiler_inline_result.error;
+            var JSCompiler_inline_result$jscomp$0 = "function" === typeof Symbol && Symbol.toStringTag && value[Symbol.toStringTag] || value.constructor.name || "Object";
+            JSCompiler_temp_const.call(JSCompiler_inline_result, "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.", JSCompiler_inline_result$jscomp$0);
+            return testStringCoercion(value);
+        }
+    }
+    function getTaskName(type) {
+        if (type === REACT_FRAGMENT_TYPE) return "<>";
+        if ("object" === typeof type && null !== type && type.$$typeof === REACT_LAZY_TYPE) return "<...>";
+        try {
+            var name = getComponentNameFromType(type);
+            return name ? "<" + name + ">" : "<...>";
+        } catch (x) {
+            return "<...>";
+        }
+    }
+    function getOwner() {
+        var dispatcher = ReactSharedInternals.A;
+        return null === dispatcher ? null : dispatcher.getOwner();
+    }
+    function UnknownOwner() {
+        return Error("react-stack-top-frame");
+    }
+    function hasValidKey(config) {
+        if (hasOwnProperty.call(config, "key")) {
+            var getter = Object.getOwnPropertyDescriptor(config, "key").get;
+            if (getter && getter.isReactWarning) return !1;
+        }
+        return void 0 !== config.key;
+    }
+    function defineKeyPropWarningGetter(props, displayName) {
+        function warnAboutAccessingKey() {
+            specialPropKeyWarningShown || (specialPropKeyWarningShown = !0, console.error("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)", displayName));
+        }
+        warnAboutAccessingKey.isReactWarning = !0;
+        Object.defineProperty(props, "key", {
+            get: warnAboutAccessingKey,
+            configurable: !0
+        });
+    }
+    function elementRefGetterWithDeprecationWarning() {
+        var componentName = getComponentNameFromType(this.type);
+        didWarnAboutElementRef[componentName] || (didWarnAboutElementRef[componentName] = !0, console.error("Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."));
+        componentName = this.props.ref;
+        return void 0 !== componentName ? componentName : null;
+    }
+    function ReactElement(type, key, props, owner, debugStack, debugTask) {
+        var refProp = props.ref;
+        type = {
+            $$typeof: REACT_ELEMENT_TYPE,
+            type: type,
+            key: key,
+            props: props,
+            _owner: owner
+        };
+        null !== (void 0 !== refProp ? refProp : null) ? Object.defineProperty(type, "ref", {
+            enumerable: !1,
+            get: elementRefGetterWithDeprecationWarning
+        }) : Object.defineProperty(type, "ref", {
+            enumerable: !1,
+            value: null
+        });
+        type._store = {};
+        Object.defineProperty(type._store, "validated", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: 0
+        });
+        Object.defineProperty(type, "_debugInfo", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: null
+        });
+        Object.defineProperty(type, "_debugStack", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: debugStack
+        });
+        Object.defineProperty(type, "_debugTask", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: debugTask
+        });
+        Object.freeze && (Object.freeze(type.props), Object.freeze(type));
+        return type;
+    }
+    function jsxDEVImpl(type, config, maybeKey, isStaticChildren, debugStack, debugTask) {
+        var children = config.children;
+        if (void 0 !== children) {
+            if (isStaticChildren) {
+                if (isArrayImpl(children)) {
+                    for(isStaticChildren = 0; isStaticChildren < children.length; isStaticChildren++)validateChildKeys(children[isStaticChildren]);
+                    Object.freeze && Object.freeze(children);
+                } else console.error("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
+            } else validateChildKeys(children);
+        }
+        if (hasOwnProperty.call(config, "key")) {
+            children = getComponentNameFromType(type);
+            var keys = Object.keys(config).filter(function(k) {
+                return "key" !== k;
+            });
+            isStaticChildren = 0 < keys.length ? "{key: someKey, " + keys.join(": ..., ") + ": ...}" : "{key: someKey}";
+            didWarnAboutKeySpread[children + isStaticChildren] || (keys = 0 < keys.length ? "{" + keys.join(": ..., ") + ": ...}" : "{}", console.error('A props object containing a "key" prop is being spread into JSX:\n  let props = %s;\n  <%s {...props} />\nReact keys must be passed directly to JSX without using spread:\n  let props = %s;\n  <%s key={someKey} {...props} />', isStaticChildren, children, keys, children), didWarnAboutKeySpread[children + isStaticChildren] = !0);
+        }
+        children = null;
+        void 0 !== maybeKey && (checkKeyStringCoercion(maybeKey), children = "" + maybeKey);
+        hasValidKey(config) && (checkKeyStringCoercion(config.key), children = "" + config.key);
+        if ("key" in config) {
+            maybeKey = {};
+            for(var propName in config)"key" !== propName && (maybeKey[propName] = config[propName]);
+        } else maybeKey = config;
+        children && defineKeyPropWarningGetter(maybeKey, "function" === typeof type ? type.displayName || type.name || "Unknown" : type);
+        return ReactElement(type, children, maybeKey, getOwner(), debugStack, debugTask);
+    }
+    function validateChildKeys(node) {
+        isValidElement(node) ? node._store && (node._store.validated = 1) : "object" === typeof node && null !== node && node.$$typeof === REACT_LAZY_TYPE && ("fulfilled" === node._payload.status ? isValidElement(node._payload.value) && node._payload.value._store && (node._payload.value._store.validated = 1) : node._store && (node._store.validated = 1));
+    }
+    function isValidElement(object) {
+        return "object" === typeof object && null !== object && object.$$typeof === REACT_ELEMENT_TYPE;
+    }
+    var React = require("58362d9d82be395f"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_ACTIVITY_TYPE = Symbol.for("react.activity"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ReactSharedInternals = React.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, hasOwnProperty = Object.prototype.hasOwnProperty, isArrayImpl = Array.isArray, createTask = console.createTask ? console.createTask : function() {
+        return null;
+    };
+    React = {
+        react_stack_bottom_frame: function(callStackForError) {
+            return callStackForError();
+        }
+    };
+    var specialPropKeyWarningShown;
+    var didWarnAboutElementRef = {};
+    var unknownOwnerDebugStack = React.react_stack_bottom_frame.bind(React, UnknownOwner)();
+    var unknownOwnerDebugTask = createTask(getTaskName(UnknownOwner));
+    var didWarnAboutKeySpread = {};
+    exports.Fragment = REACT_FRAGMENT_TYPE;
+    exports.jsxDEV = function(type, config, maybeKey, isStaticChildren) {
+        var trackActualOwner = 1e4 > ReactSharedInternals.recentlyCreatedOwnerStacks++;
+        return jsxDEVImpl(type, config, maybeKey, isStaticChildren, trackActualOwner ? Error("react-stack-top-frame") : unknownOwnerDebugStack, trackActualOwner ? createTask(getTaskName(type)) : unknownOwnerDebugTask);
+    };
+})();
+
+},{"58362d9d82be395f":"jMk1U"}],"jMk1U":[function(require,module,exports,__globalThis) {
 'use strict';
 module.exports = require("a569817e6ea559f6");
 
@@ -19520,6 +19766,985 @@ function $da9882e673ac146b$var$ErrorOverlay() {
     });
     return null;
 }
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"3PJ6N":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$d118 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$d118.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d118.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _constants = require("../utils/constants");
+const Header = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "header",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "logo-container",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    className: "logo",
+                    alt: "Food App Logo",
+                    src: (0, _constants.LOGO_URL)
+                }, void 0, false, {
+                    fileName: "src/components/Header.js",
+                    lineNumber: 6,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/Header.js",
+                lineNumber: 5,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "nav-items",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Home"
+                        }, void 0, false, {
+                            fileName: "src/components/Header.js",
+                            lineNumber: 10,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "About Us"
+                        }, void 0, false, {
+                            fileName: "src/components/Header.js",
+                            lineNumber: 11,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Contact Us"
+                        }, void 0, false, {
+                            fileName: "src/components/Header.js",
+                            lineNumber: 12,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Cart"
+                        }, void 0, false, {
+                            fileName: "src/components/Header.js",
+                            lineNumber: 13,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/Header.js",
+                    lineNumber: 9,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/Header.js",
+                lineNumber: 8,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Header.js",
+        lineNumber: 4,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Header;
+exports.default = Header;
+var _c;
+$RefreshReg$(_c, "Header");
+
+  $parcel$ReactRefreshHelpers$d118.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"dVPUn","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","../utils/constants":"dIVBf"}],"dIVBf":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "CDN_URL", ()=>CDN_URL);
+parcelHelpers.export(exports, "LOGO_URL", ()=>LOGO_URL);
+const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+const LOGO_URL = "https://png.pngtree.com/png-vector/20220727/ourmid/pngtree-food-logo-png-image_6089719.png";
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"loQlg":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$8a58 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$8a58.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8a58.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _restaurantCard = require("./RestaurantCard");
+var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
+var _mockData = require("../utils/mockData");
+var _mockDataDefault = parcelHelpers.interopDefault(_mockData);
+const Body = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "body",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "search",
+                children: "Search"
+            }, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 6,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "res-container",
+                style: {
+                    display: "flex",
+                    flexWrap: "wrap"
+                },
+                children: (0, _mockDataDefault.default).map((restaurant, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
+                        resData: restaurant
+                    }, restaurant.card.card.info.id, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 12,
+                        columnNumber: 11
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 7,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Body.js",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Body;
+exports.default = Body;
+var _c;
+$RefreshReg$(_c, "Body");
+
+  $parcel$ReactRefreshHelpers$8a58.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"dVPUn","./RestaurantCard":"lCpT9","../utils/mockData":"4sSQA","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"lCpT9":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$7721 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$7721.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$7721.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _constants = require("../utils/constants");
+const RestaurantCard = (props)=>{
+    //console.log("The original object is {0}", props);
+    const { name, cuisines, costForTwo, avgRatingString } = props.resData.card.card.info;
+    const actualData = props.resData.card.card.info;
+    //console.log(actualData);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "res-card",
+        style: {
+            backgroundColor: "#f0f0f0"
+        },
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "res-logo",
+                src: (0, _constants.CDN_URL) + props.resData.card.card.info.cloudinaryImageId
+            }, void 0, false, {
+                fileName: "src/components/RestaurantCard.js",
+                lineNumber: 10,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: name
+            }, void 0, false, {
+                fileName: "src/components/RestaurantCard.js",
+                lineNumber: 14,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: cuisines.join(",")
+            }, void 0, false, {
+                fileName: "src/components/RestaurantCard.js",
+                lineNumber: 15,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: costForTwo
+            }, void 0, false, {
+                fileName: "src/components/RestaurantCard.js",
+                lineNumber: 16,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: [
+                    avgRatingString,
+                    " stars"
+                ]
+            }, void 0, true, {
+                fileName: "src/components/RestaurantCard.js",
+                lineNumber: 17,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: actualData.sla.slaString
+            }, void 0, false, {
+                fileName: "src/components/RestaurantCard.js",
+                lineNumber: 18,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/RestaurantCard.js",
+        lineNumber: 9,
+        columnNumber: 5
+    }, undefined);
+};
+_c = RestaurantCard;
+exports.default = RestaurantCard;
+var _c;
+$RefreshReg$(_c, "RestaurantCard");
+
+  $parcel$ReactRefreshHelpers$7721.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"dVPUn","../utils/constants":"dIVBf","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"4sSQA":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const resObj = [
+    {
+        card: {
+            card: {
+                "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+                info: {
+                    id: "335438",
+                    name: "RNR Biryani - Taste of 1953",
+                    cloudinaryImageId: "jscjfozjtcaah8lnke6o",
+                    locality: "Kasavanahalli",
+                    areaName: "Marathahalli",
+                    costForTwo: "\u20B9350 for two",
+                    cuisines: [
+                        "Biryani",
+                        "South Indian"
+                    ],
+                    avgRating: 4.4,
+                    parentId: "11620",
+                    avgRatingString: "4.4",
+                    totalRatingsString: "9.8K+",
+                    promoted: true,
+                    adTrackingId: "cid=b86003c1-0242-4b61-90e0-843c6bf99af1~p=0~adgrpid=b86003c1-0242-4b61-90e0-843c6bf99af1#ag1~mp=SWIGGY_IN~bl=FOOD~aet=RESTAURANT~aeid=335438~plpr=COLLECTION~eid=a81f19f8-58a5-48ed-b3d4-f9353dab12da~srvts=1771076258116~collid=83639",
+                    sla: {
+                        deliveryTime: 20,
+                        lastMileTravel: 1.2,
+                        serviceability: "SERVICEABLE",
+                        slaString: "20-25 mins",
+                        lastMileTravelString: "1.2 km",
+                        iconType: "ICON_TYPE_EMPTY"
+                    },
+                    availability: {
+                        nextCloseTime: "2026-02-15 01:00:00",
+                        opened: true
+                    },
+                    badges: {
+                        imageBadges: [
+                            {
+                                imageId: "android/static-assets/icons/big_rx.png",
+                                description: "bolt!"
+                            }
+                        ]
+                    },
+                    isOpen: true,
+                    type: "F",
+                    badgesV2: {
+                        entityBadges: {
+                            textBased: {},
+                            imageBased: {
+                                badgeObject: [
+                                    {
+                                        attributes: {
+                                            description: "bolt!",
+                                            imageId: "android/static-assets/icons/big_rx.png"
+                                        }
+                                    }
+                                ]
+                            },
+                            textExtendedBadges: {}
+                        }
+                    },
+                    aggregatedDiscountInfoV3: {
+                        header: "ITEMS",
+                        subHeader: "AT \u20B999",
+                        logoCtx: {
+                            text: "BENEFITS"
+                        }
+                    },
+                    orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                        commsStyling: {}
+                    },
+                    differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                            lottie: {},
+                            video: {}
+                        }
+                    },
+                    reviewsSummary: {},
+                    displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    restaurantOfferPresentationInfo: {},
+                    externalRatings: {
+                        aggregatedRating: {
+                            rating: "--"
+                        }
+                    },
+                    ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+                    campaignId: "b86003c1-0242-4b61-90e0-843c6bf99af1"
+                },
+                analytics: {},
+                cta: {
+                    link: "swiggy://menu?restaurant_id=335438&source=collection&query=Biryani",
+                    text: "RESTAURANT_MENU",
+                    type: "DEEPLINK"
+                },
+                widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food"
+            },
+            relevance: {
+                type: "RELEVANCE_TYPE_ON_MENU_RETURN",
+                sectionId: "MENU_RETURN_FOOD"
+            }
+        }
+    },
+    {
+        card: {
+            card: {
+                "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+                info: {
+                    id: "716563",
+                    name: "Barbeque Nation",
+                    cloudinaryImageId: "4e61b4fc3efcc8bf00e55133249524bf",
+                    locality: "VARTHUR",
+                    areaName: "MARATHALLI",
+                    costForTwo: "\u20B9600 for two",
+                    cuisines: [
+                        "North Indian",
+                        "Barbecue",
+                        "Kebabs",
+                        "Biryani",
+                        "Street Food",
+                        "Snacks"
+                    ],
+                    avgRating: 3.7,
+                    parentId: "2438",
+                    avgRatingString: "3.7",
+                    totalRatingsString: "614",
+                    sla: {
+                        deliveryTime: 45,
+                        lastMileTravel: 3,
+                        serviceability: "SERVICEABLE",
+                        slaString: "45-55 mins",
+                        lastMileTravelString: "3.0 km",
+                        iconType: "ICON_TYPE_EMPTY"
+                    },
+                    availability: {
+                        nextCloseTime: "2026-02-15 01:00:00",
+                        opened: true
+                    },
+                    badges: {},
+                    isOpen: true,
+                    type: "F",
+                    badgesV2: {
+                        entityBadges: {
+                            textExtendedBadges: {},
+                            textBased: {},
+                            imageBased: {}
+                        }
+                    },
+                    aggregatedDiscountInfoV3: {
+                        header: "ITEMS",
+                        subHeader: "AT \u20B974",
+                        logoCtx: {
+                            text: "BENEFITS"
+                        }
+                    },
+                    orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                        commsStyling: {}
+                    },
+                    differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                            lottie: {},
+                            video: {}
+                        }
+                    },
+                    reviewsSummary: {},
+                    displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    restaurantOfferPresentationInfo: {},
+                    externalRatings: {
+                        aggregatedRating: {
+                            rating: "--"
+                        }
+                    },
+                    ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                },
+                analytics: {},
+                cta: {
+                    link: "swiggy://menu?restaurant_id=716563&source=collection&query=Biryani",
+                    text: "RESTAURANT_MENU",
+                    type: "DEEPLINK"
+                },
+                widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food"
+            },
+            relevance: {
+                type: "RELEVANCE_TYPE_ON_MENU_RETURN",
+                sectionId: "MENU_RETURN_FOOD"
+            }
+        }
+    },
+    {
+        card: {
+            card: {
+                "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+                info: {
+                    id: "18976",
+                    name: "Nandhana Palace",
+                    cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2024/11/7/a648a88f-4247-46cd-84a4-c13fb6ff2e7f_18976.JPG",
+                    locality: "Marathahalli",
+                    areaName: "Marathahalli",
+                    costForTwo: "\u20B9500 for two",
+                    cuisines: [
+                        "Biryani",
+                        "Andhra",
+                        "South Indian",
+                        "North Indian"
+                    ],
+                    avgRating: 4.3,
+                    parentId: "2120",
+                    avgRatingString: "4.3",
+                    totalRatingsString: "38K+",
+                    promoted: true,
+                    adTrackingId: "cid=bdeb0462-1bcf-4209-8d17-9a79242995b1~p=2~adgrpid=bdeb0462-1bcf-4209-8d17-9a79242995b1#ag1~mp=SWIGGY_IN~bl=FOOD~aet=RESTAURANT~aeid=18976~plpr=COLLECTION~eid=f28530cd-b391-4937-8fd0-1cc271e5386c~srvts=1771076258116~collid=83639",
+                    sla: {
+                        deliveryTime: 21,
+                        lastMileTravel: 1.2,
+                        serviceability: "SERVICEABLE",
+                        slaString: "20-25 mins",
+                        lastMileTravelString: "1.2 km",
+                        iconType: "ICON_TYPE_EMPTY"
+                    },
+                    availability: {
+                        nextCloseTime: "2026-02-15 02:00:00",
+                        opened: true
+                    },
+                    badges: {
+                        imageBadges: [
+                            {
+                                imageId: "android/static-assets/icons/big_rx.png",
+                                description: "bolt!"
+                            },
+                            {
+                                imageId: "Rxawards/_CATEGORY-Biryani.png",
+                                description: "Delivery!"
+                            }
+                        ]
+                    },
+                    isOpen: true,
+                    type: "F",
+                    badgesV2: {
+                        entityBadges: {
+                            textBased: {},
+                            imageBased: {
+                                badgeObject: [
+                                    {
+                                        attributes: {
+                                            imageId: "android/static-assets/icons/big_rx.png",
+                                            description: "bolt!"
+                                        }
+                                    },
+                                    {
+                                        attributes: {
+                                            imageId: "Rxawards/_CATEGORY-Biryani.png",
+                                            description: "Delivery!"
+                                        }
+                                    }
+                                ]
+                            },
+                            textExtendedBadges: {}
+                        }
+                    },
+                    aggregatedDiscountInfoV3: {
+                        header: "ITEMS",
+                        subHeader: "AT \u20B999",
+                        logoCtx: {
+                            text: "BENEFITS"
+                        }
+                    },
+                    orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                        commsStyling: {}
+                    },
+                    differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                            lottie: {},
+                            video: {}
+                        }
+                    },
+                    reviewsSummary: {},
+                    displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    restaurantOfferPresentationInfo: {},
+                    externalRatings: {
+                        aggregatedRating: {
+                            rating: "4.2",
+                            ratingCount: "10K+"
+                        },
+                        source: "GOOGLE",
+                        sourceIconImageId: "v1704440323/google_ratings/rating_google_tag"
+                    },
+                    ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+                    campaignId: "bdeb0462-1bcf-4209-8d17-9a79242995b1"
+                },
+                analytics: {},
+                cta: {
+                    link: "swiggy://menu?restaurant_id=18976&source=collection&query=Biryani",
+                    text: "RESTAURANT_MENU",
+                    type: "DEEPLINK"
+                },
+                widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food"
+            },
+            relevance: {
+                type: "RELEVANCE_TYPE_ON_MENU_RETURN",
+                sectionId: "MENU_RETURN_FOOD"
+            }
+        }
+    },
+    {
+        card: {
+            card: {
+                "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+                info: {
+                    id: "922339",
+                    name: "Thalairaj Biryani",
+                    cloudinaryImageId: "FOOD_CATALOG/IMAGES/CMS/2024/3/18/fa3ce5da-4627-4d2f-95a3-e47142195ab0_04f053b3-a5c3-4e49-8b06-61034e6fbb9e.jpg_compressed",
+                    locality: "Kodbisanhalli",
+                    areaName: "Marathahalli",
+                    costForTwo: "\u20B9250 for two",
+                    cuisines: [
+                        "Andhra",
+                        "Biryani",
+                        "Hyderabadi",
+                        "South Indian",
+                        "Indian",
+                        "Kebabs",
+                        "Snacks",
+                        "Beverages"
+                    ],
+                    avgRating: 4.5,
+                    parentId: "433875",
+                    avgRatingString: "4.5",
+                    totalRatingsString: "1.9K+",
+                    sla: {
+                        deliveryTime: 21,
+                        lastMileTravel: 1.7,
+                        serviceability: "SERVICEABLE",
+                        slaString: "20-25 mins",
+                        lastMileTravelString: "1.7 km",
+                        iconType: "ICON_TYPE_EMPTY"
+                    },
+                    availability: {
+                        nextCloseTime: "2026-02-15 00:00:00",
+                        opened: true
+                    },
+                    badges: {
+                        imageBadges: [
+                            {
+                                imageId: "android/static-assets/icons/big_rx.png",
+                                description: "bolt!"
+                            }
+                        ]
+                    },
+                    isOpen: true,
+                    type: "F",
+                    badgesV2: {
+                        entityBadges: {
+                            imageBased: {
+                                badgeObject: [
+                                    {
+                                        attributes: {
+                                            imageId: "android/static-assets/icons/big_rx.png",
+                                            description: "bolt!"
+                                        }
+                                    }
+                                ]
+                            },
+                            textExtendedBadges: {},
+                            textBased: {}
+                        }
+                    },
+                    aggregatedDiscountInfoV3: {
+                        header: "ITEMS",
+                        subHeader: "AT \u20B9109",
+                        logoCtx: {
+                            text: "BENEFITS"
+                        }
+                    },
+                    orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                        commsStyling: {}
+                    },
+                    differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                            lottie: {},
+                            video: {}
+                        }
+                    },
+                    reviewsSummary: {},
+                    displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    restaurantOfferPresentationInfo: {},
+                    externalRatings: {
+                        aggregatedRating: {
+                            rating: "--"
+                        }
+                    },
+                    ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                },
+                analytics: {},
+                cta: {
+                    link: "swiggy://menu?restaurant_id=922339&source=collection&query=Biryani",
+                    text: "RESTAURANT_MENU",
+                    type: "DEEPLINK"
+                },
+                widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food"
+            },
+            relevance: {
+                type: "RELEVANCE_TYPE_ON_MENU_RETURN",
+                sectionId: "MENU_RETURN_FOOD"
+            }
+        }
+    },
+    {
+        card: {
+            card: {
+                "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+                info: {
+                    id: "433763",
+                    name: "Biryani Blues",
+                    cloudinaryImageId: "97377e54937c079fe269d744aa66274a",
+                    locality: "Tulasi Theater Road",
+                    areaName: "Marathahalli",
+                    costForTwo: "\u20B9400 for two",
+                    cuisines: [
+                        "Biryani",
+                        "Hyderabadi",
+                        "Lucknowi",
+                        "Kebabs",
+                        "Beverages"
+                    ],
+                    avgRating: 4.1,
+                    parentId: "13813",
+                    avgRatingString: "4.1",
+                    totalRatingsString: "5.6K+",
+                    promoted: true,
+                    adTrackingId: "cid=91dc4911-f742-4d33-87bc-2596af819b69~p=3~adgrpid=91dc4911-f742-4d33-87bc-2596af819b69#ag1~mp=SWIGGY_IN~bl=FOOD~aet=RESTAURANT~aeid=433763~plpr=COLLECTION~eid=7ecc5e57-ac05-4ba0-aeeb-d22fab3736aa~srvts=1771076258116~collid=83639",
+                    sla: {
+                        deliveryTime: 33,
+                        lastMileTravel: 4,
+                        serviceability: "SERVICEABLE",
+                        slaString: "30-35 mins",
+                        lastMileTravelString: "4.0 km",
+                        iconType: "ICON_TYPE_EMPTY"
+                    },
+                    availability: {
+                        nextCloseTime: "2026-02-14 23:59:00",
+                        opened: true
+                    },
+                    badges: {},
+                    isOpen: true,
+                    type: "F",
+                    badgesV2: {
+                        entityBadges: {
+                            textExtendedBadges: {},
+                            textBased: {},
+                            imageBased: {}
+                        }
+                    },
+                    aggregatedDiscountInfoV3: {
+                        header: "ITEMS",
+                        subHeader: "AT \u20B969",
+                        logoCtx: {
+                            text: "BENEFITS"
+                        }
+                    },
+                    orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                        commsStyling: {}
+                    },
+                    differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                            lottie: {},
+                            video: {}
+                        }
+                    },
+                    reviewsSummary: {},
+                    displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    restaurantOfferPresentationInfo: {},
+                    externalRatings: {
+                        aggregatedRating: {
+                            rating: "--"
+                        }
+                    },
+                    ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+                    campaignId: "91dc4911-f742-4d33-87bc-2596af819b69"
+                },
+                analytics: {},
+                cta: {
+                    link: "swiggy://menu?restaurant_id=433763&source=collection&query=Biryani",
+                    text: "RESTAURANT_MENU",
+                    type: "DEEPLINK"
+                },
+                widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food"
+            },
+            relevance: {
+                type: "RELEVANCE_TYPE_ON_MENU_RETURN",
+                sectionId: "MENU_RETURN_FOOD"
+            }
+        }
+    },
+    {
+        card: {
+            card: {
+                "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+                info: {
+                    id: "1030886",
+                    name: "Thalaiva Biryani",
+                    cloudinaryImageId: "FOOD_CATALOG/IMAGES/CMS/2025/7/2/8bf3bbe1-bccf-4067-9340-4ef0ce3caf28_4928d658-b637-4deb-8c57-b975167aaf4e.jpeg",
+                    locality: "Outer Ring Rd",
+                    areaName: "Kadubeesanahalli",
+                    costForTwo: "\u20B9400 for two",
+                    cuisines: [
+                        "Biryani",
+                        "Mughlai",
+                        "Lucknowi",
+                        "Hyderabadi",
+                        "Kebabs",
+                        "Desserts",
+                        "Beverages"
+                    ],
+                    avgRating: 3.6,
+                    parentId: "582792",
+                    avgRatingString: "3.6",
+                    totalRatingsString: "40",
+                    sla: {
+                        deliveryTime: 29,
+                        lastMileTravel: 2.5,
+                        serviceability: "SERVICEABLE",
+                        slaString: "25-30 mins",
+                        lastMileTravelString: "2.5 km",
+                        iconType: "ICON_TYPE_EMPTY"
+                    },
+                    availability: {
+                        nextCloseTime: "2026-02-14 23:59:00",
+                        opened: true
+                    },
+                    badges: {
+                        imageBadges: [
+                            {
+                                imageId: "android/static-assets/icons/big_rx.png",
+                                description: "bolt!"
+                            }
+                        ]
+                    },
+                    isOpen: true,
+                    type: "F",
+                    badgesV2: {
+                        entityBadges: {
+                            textExtendedBadges: {},
+                            textBased: {},
+                            imageBased: {
+                                badgeObject: [
+                                    {
+                                        attributes: {
+                                            description: "bolt!",
+                                            imageId: "android/static-assets/icons/big_rx.png"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    aggregatedDiscountInfoV3: {
+                        header: "ITEMS",
+                        subHeader: "AT \u20B989",
+                        logoCtx: {
+                            text: "BENEFITS"
+                        }
+                    },
+                    orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                        commsStyling: {}
+                    },
+                    differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                            lottie: {},
+                            video: {}
+                        }
+                    },
+                    reviewsSummary: {},
+                    displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    restaurantOfferPresentationInfo: {},
+                    externalRatings: {
+                        aggregatedRating: {
+                            rating: "--"
+                        }
+                    },
+                    ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                },
+                analytics: {},
+                cta: {
+                    link: "swiggy://menu?restaurant_id=1030886&source=collection&query=Biryani",
+                    text: "RESTAURANT_MENU",
+                    type: "DEEPLINK"
+                },
+                widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food"
+            },
+            relevance: {
+                type: "RELEVANCE_TYPE_ON_MENU_RETURN",
+                sectionId: "MENU_RETURN_FOOD"
+            }
+        }
+    },
+    {
+        card: {
+            card: {
+                "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+                info: {
+                    id: "251656",
+                    name: "Dindigul Thalappakatti - Since 1957\n",
+                    cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2025/9/21/99ca793c-388f-4de9-9502-0136bb1fa20c_251656.JPG",
+                    locality: "Marathahalli",
+                    areaName: "Marathahalli",
+                    costForTwo: "\u20B9600 for two",
+                    cuisines: [
+                        "Biryani",
+                        "Barbecue",
+                        "South Indian",
+                        "Chinese",
+                        "North Indian"
+                    ],
+                    avgRating: 4.3,
+                    parentId: "641506",
+                    avgRatingString: "4.3",
+                    totalRatingsString: "5.7K+",
+                    promoted: true,
+                    adTrackingId: "cid=74903606-a7c4-494a-9769-40b58d15cb35~p=6~adgrpid=74903606-a7c4-494a-9769-40b58d15cb35#ag1~mp=SWIGGY_IN~bl=FOOD~aet=RESTAURANT~aeid=251656~plpr=COLLECTION~eid=d49f9f16-40c7-47c1-8991-0c519dcd4091~srvts=1771076258116~collid=83639",
+                    sla: {
+                        deliveryTime: 34,
+                        lastMileTravel: 1,
+                        serviceability: "SERVICEABLE",
+                        slaString: "30-35 mins",
+                        lastMileTravelString: "1.0 km",
+                        iconType: "ICON_TYPE_EMPTY"
+                    },
+                    availability: {
+                        nextCloseTime: "2026-02-14 23:45:00",
+                        opened: true
+                    },
+                    badges: {},
+                    isOpen: true,
+                    type: "F",
+                    badgesV2: {
+                        entityBadges: {
+                            textBased: {},
+                            imageBased: {},
+                            textExtendedBadges: {}
+                        }
+                    },
+                    aggregatedDiscountInfoV3: {
+                        header: "ITEMS",
+                        subHeader: "AT \u20B9149",
+                        logoCtx: {
+                            text: "BENEFITS"
+                        }
+                    },
+                    orderabilityCommunication: {
+                        title: {},
+                        subTitle: {},
+                        message: {},
+                        customIcon: {},
+                        commsStyling: {}
+                    },
+                    differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                            mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                            lottie: {},
+                            video: {}
+                        }
+                    },
+                    reviewsSummary: {},
+                    displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                    restaurantOfferPresentationInfo: {},
+                    externalRatings: {
+                        aggregatedRating: {
+                            rating: "4.4",
+                            ratingCount: "5.7K+"
+                        },
+                        source: "GOOGLE",
+                        sourceIconImageId: "v1704440323/google_ratings/rating_google_tag"
+                    },
+                    ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+                    campaignId: "74903606-a7c4-494a-9769-40b58d15cb35"
+                },
+                analytics: {},
+                cta: {
+                    link: "swiggy://menu?restaurant_id=251656&source=collection&query=Biryani",
+                    text: "RESTAURANT_MENU",
+                    type: "DEEPLINK"
+                },
+                widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food"
+            },
+            relevance: {
+                type: "RELEVANCE_TYPE_ON_MENU_RETURN",
+                sectionId: "MENU_RETURN_FOOD"
+            }
+        }
+    }
+];
+exports.default = resObj;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["aj62f","4ZGjQ"], "4ZGjQ", "parcelRequireb877", {}, null, null, "http://localhost:1234")
 

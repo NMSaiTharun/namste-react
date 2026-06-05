@@ -1,4 +1,44 @@
-#heading1, #heading3 {
-  color: orange;
+.header {
+  border: 1px solid orange;
+  justify-content: space-between;
+  display: flex;
+}
+
+.logo {
+  width: 150px;
+}
+
+.nav-items > ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-items > ul > li {
+  margin: 10px;
+  padding: 10px;
+  font-family: Georgia, Times New Roman, Times, serif;
+  font-size: 30px;
+}
+
+.res-card {
+  word-wrap: break-word;
+  border: 1px solid #000;
+  width: 300px;
+  height: auto;
+  margin: 10px;
+  padding: 10px;
+}
+
+.res-card:hover {
+  cursor: pointer;
+  border: 1px solid orange;
+}
+
+.search {
+  padding: 10px;
+}
+
+.res-logo {
+  width: 100%;
 }
 /*# sourceMappingURL=namste-react.9e4c6fd2.css.map */
