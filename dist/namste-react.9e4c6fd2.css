@@ -34,8 +34,12 @@
   border: 1px solid orange;
 }
 
-.search {
+.filter-btn {
+  cursor: pointer;
+  margin: 10px;
   padding: 10px;
+  font-size: large;
+  font-weight: bold;
 }
 
 .res-logo {
