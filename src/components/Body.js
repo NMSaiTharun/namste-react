@@ -36,6 +36,19 @@ const Body = () => {
           className="search"
           onChange={(e) => {
             setSearchText(e.target.value);
+            let filteredRestaurant = listOfRestaurants.filter((a) =>
+              a.info.name.toLowerCase().includes(searchText.toLowerCase()),
+            );
+            setFilteredRestaurants(filteredRestaurant);
+          }}
+          onKeyDown={(e) => {
+            console.log("Enter Event");
+            if (e.key === "Enter") {
+              let filteredRestaurant = listOfRestaurants.filter((a) =>
+                a.info.name.toLowerCase().includes(searchText.toLowerCase()),
+              );
+              setFilteredRestaurants(filteredRestaurant);
+            }
           }}
           value={searchText}
         />
