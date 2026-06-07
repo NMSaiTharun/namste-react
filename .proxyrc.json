@@ -1,0 +1,9 @@
+{
+  "/api": {
+    "target": "https://www.swiggy.com",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}
