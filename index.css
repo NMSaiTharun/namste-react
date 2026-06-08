@@ -73,3 +73,7 @@
   cursor: pointer;
   font-size: large;
 }
+.user-card {
+  padding: 5px;
+  border: 1px solid black;
+}
