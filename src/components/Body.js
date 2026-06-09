@@ -2,7 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import resObj from "../utils/mockData";
 import { useState, useEffect, use } from "react";
 import Shimmer from "./Shimmer";
-
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
@@ -26,6 +26,14 @@ const Body = () => {
     );
   };
   // Conditional Rendering
+  const onlineStatus = useOnlineStatus();
+  console.log(onlineStatus);
+  if (onlineStatus == false) {
+    return (
+      <h1>Looks Like you're offline, please check internet connection!</h1>
+    );
+  }
+
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
