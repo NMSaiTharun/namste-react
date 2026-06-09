@@ -6,28 +6,30 @@ const Header = () => {
   const [loginBtn, setLoginBtn] = useState("Login");
   console.log("online/offline check");
   return (
-    <div className="header">
-      <div className="logo-container">
-        <img className="logo" alt="Food App Logo" src={LOGO_URL}></img>
+    <div className="flex justify-between bg-red-600 shadow-lg">
+      <div className="">
+        <img className="w-56" alt="Food App Logo" src={LOGO_URL}></img>
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>Online Status: {useOnlineStatus() ? "✅" : "❌"}</li>
-          <li>
+      <div className="flex items-center">
+        <ul className="flex p-4 m-4">
+          <li className="px-4 text-2xl font-bold">
+            Online Status: {useOnlineStatus() ? "✅" : "❌"}
+          </li>
+          <li className="px-4 text-2xl font-bold">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="px-4 text-2xl font-bold">
             <Link to="/Grocery">Grocery</Link>
           </li>
-          <li>
+          <li className="px-4 text-2xl font-bold">
             <Link to="/about">About Us</Link>
           </li>
-          <li>
+          <li className="px-4 text-2xl font-bold">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>Cart</li>
+          <li className="px-4 text-2xl font-bold">Cart</li>
           <button
-            className="login-btn"
+            className="text-2xl font-bold"
             onClick={() => {
               loginBtn == "Login"
                 ? setLoginBtn("Logout")
