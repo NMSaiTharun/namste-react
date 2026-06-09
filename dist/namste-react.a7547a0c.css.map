@@ -1,1 +1,0 @@
-{"mappings":"ACAA","sources":["namste-react.a7547a0c.css","index.css"],"sourcesContent":["#heading1, #heading3 {\n  color: orange;\n}\n/*# sourceMappingURL=namste-react.a7547a0c.css.map */\n","#heading1,#heading3{\r\n    color:orange;\r\n}"],"names":[],"version":3,"file":"namste-react.a7547a0c.css.map"}
