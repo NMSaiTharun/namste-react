@@ -18,5 +18,21 @@ const RestaurantCard = (props) => {
     </div>
   );
 };
+// Higher Order Component
+export const withPromotedLabel = (RestaurantCard) => {
+  console.log(RestaurantCard);
+  return (props) => {
+    console.log(props);
+
+    return (
+      <div className="relative">
+        <label className="absolute top-2 left-2 bg-black text-white text-small font-bold px-2 py-1 rounded-lg z-10">
+          Promoted
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};
 
 export default RestaurantCard;
