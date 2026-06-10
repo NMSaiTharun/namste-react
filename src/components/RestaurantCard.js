@@ -1,4 +1,5 @@
 import { CDN_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
 const RestaurantCard = (props) => {
   //console.log("The original object is {0}", props);
   const { name, cuisines, costForTwo, avgRatingString } = props.resData.info;
@@ -6,10 +7,13 @@ const RestaurantCard = (props) => {
   //console.log(actualData);
   return (
     <div className="m-4 p-4 w-[500px] rounded-lg bg-gray-100 hover:bg-gray-200">
-      <img
-        className="rounded-lg"
-        src={CDN_URL + actualData.cloudinaryImageId}
-      ></img>
+      <Link to={"restaurants/" + actualData.id}>
+        <img
+          className="rounded-lg cursor-pointer"
+          src={CDN_URL + actualData.cloudinaryImageId}
+        ></img>
+      </Link>
+
       <h3 className="font-bold py-4 text-2xl">{name}</h3>
       <h4 className="text-xl">{cuisines.join(",")}</h4>
       <h4 className="text-xl">{costForTwo}</h4>
