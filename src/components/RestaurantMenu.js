@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import restaurantMenuData from "../utils/menu.json";
 import { CDN_URL } from "../utils/constants";
+import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu = () => {
   //const [resInfo, setResInfo] = useState(null);
   //   useEffect(() => {
@@ -24,32 +25,34 @@ const RestaurantMenu = () => {
   //   //}
 
   const [restaurantData, setRestaurantData] = useState(null);
+  const [categoriesData, setCategoriesData] = useState(null);
   useEffect(() => {
     const menuData = restaurantMenuData;
     setRestaurantData(menuData);
+    const categoriesDataFromMenuData =
+      menuData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+        (a) =>
+          a.card?.card?.["@type"] ==
+          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+      );
+    setCategoriesData(categoriesDataFromMenuData);
   }, []);
   return (
-    <div className="menu">
-      <h1 className="text-4xl font-extrabold">
-        Name of the Restaurant :{" "}
-        {restaurantData?.data?.cards[0]?.card?.card?.text}
+    <div className="text-center">
+      <h1 className="font-bold my-6 text-2xl">
+        {restaurantData?.data?.cards[2]?.card?.card?.info?.name}
       </h1>
-      <h2 className="text-3xl font-bold">Recommended items are:</h2>
-
-      {restaurantData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards.map(
-        (item) => {
-          return (
-            <div key={item.card.info.id} className="">
-              <h1 className="text-2xl font-bold">{item.card.info.name}</h1>
-              <img src={CDN_URL + item.card.info.imageId} />
-              <h3 className="text-2xl font-bold">
-                Price: ₹{" "}
-                {(item.card.info.price || item.card.info.defaultPrice) / 100}
-              </h3>
-            </div>
-          );
-        },
-      )}
+      <p className="font-bold text-lg">
+        {restaurantData?.data?.cards[2]?.card?.card?.info?.cuisines.join(",")}{" "}
+        {" | "}
+        {restaurantData?.data?.cards[2]?.card?.card?.info?.costForTwoMessage}
+      </p>
+      {categoriesData?.map((category) => (
+        <RestaurantCategory
+          key={category?.card?.card?.title}
+          data={category?.card?.card}
+        />
+      ))}
     </div>
   );
 };
