@@ -26,6 +26,8 @@ const RestaurantMenu = () => {
 
   const [restaurantData, setRestaurantData] = useState(null);
   const [categoriesData, setCategoriesData] = useState(null);
+  const [showIndex, setShowIndex] = useState(null);
+
   useEffect(() => {
     const menuData = restaurantMenuData;
     setRestaurantData(menuData);
@@ -47,10 +49,14 @@ const RestaurantMenu = () => {
         {" | "}
         {restaurantData?.data?.cards[2]?.card?.card?.info?.costForTwoMessage}
       </p>
-      {categoriesData?.map((category) => (
+      {categoriesData?.map((category, index) => (
         <RestaurantCategory
           key={category?.card?.card?.title}
           data={category?.card?.card}
+          showItems={index == showIndex}
+          changeShowIndex={() =>
+            setShowIndex(showIndex == index ? null : index)
+          }
         />
       ))}
     </div>

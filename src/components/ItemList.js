@@ -5,7 +5,6 @@ const getRatingColor = (rating) => {
   return "text-yellow-400";
 };
 const ItemList = ({ items }) => {
-  console.log(items);
   return (
     <div>
       <div>

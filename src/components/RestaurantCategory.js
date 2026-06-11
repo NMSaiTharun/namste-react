@@ -4,14 +4,14 @@ const RestaurantCategory = (props) => {
   const [showItems, setShowItems] = useState(false);
   const categories = props.data;
   const handleClick = () => {
-    setShowItems(!showItems);
+    props.changeShowIndex();
   };
   return (
     <div>
       <div className="w-6/12 mx-auto my-4 bg-gray-50 shadow-2xl p-4">
         <div
           className="flex justify-between cursor-pointer"
-          onClick={handleClick}
+          onClick={() => handleClick(props.index)}
         >
           {" "}
           <span className="font-bold text-2xl">
@@ -20,7 +20,7 @@ const RestaurantCategory = (props) => {
           <span className="text-3xl">⬇️</span>
         </div>
 
-        {showItems && <ItemList items={categories?.itemCards || []} />}
+        {props.showItems && <ItemList items={categories?.itemCards || []} />}
       </div>
     </div>
   );
