@@ -4,7 +4,6 @@ const getRatingColor = (rating) => {
   if (rating >= 3) return "text-green-400";
   return "text-yellow-400";
 };
-
 const ItemList = ({ items }) => {
   console.log(items);
   return (
@@ -16,7 +15,7 @@ const ItemList = ({ items }) => {
             className="py-2 my-2 border-b-4 border-gray-200 text-left"
           >
             <div className="flex justify-between">
-              <div className="p-2 flex flex-col">
+              <div className="p-2 flex flex-col w-9/12">
                 {item.card.info.isVeg ? (
                   <span className="w-5 h-5 border-2 border-green-600 flex items-center justify-center">
                     <span className="w-2.5 h-2.5 rounded-full bg-green-600"></span>
@@ -26,7 +25,6 @@ const ItemList = ({ items }) => {
                     <span className="text-red-600 text-xs">▲</span>
                   </span>
                 )}
-
                 <span className="font-bold text-2xl">
                   {item.card.info.name}
                 </span>
@@ -51,17 +49,20 @@ const ItemList = ({ items }) => {
                     ({item.card.info.ratings?.aggregatedRating?.ratingCountV2})
                   </span>
                 </div>
+                <p className="font-monospace text-[18px] text-gray-800">
+                  {item.card.info.description}
+                </p>
               </div>
-              <div className="w-3/12">
+              <div className="w-3/12 relative">
                 <img
                   className="rounded-lg"
                   src={CDN_URL + item.card.info.imageId}
                 />
+                <button className="absolute bottom-1 left-1/2 -translate-x-1/2 bg-white text-green-600 font-bold text-xl px-6 py-1 rounded-lg shadow-md w-32 hover:bg-gray-200 text cursor-pointer">
+                  ADD
+                </button>
               </div>
             </div>
-            <p className="font-monospace text-[16px] text-gray text-lg">
-              {item.card.info.description}
-            </p>
           </div>
         ))}
       </div>

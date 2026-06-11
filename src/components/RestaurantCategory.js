@@ -1,10 +1,18 @@
+import { useState } from "react";
 import ItemList from "./ItemList";
 const RestaurantCategory = (props) => {
+  const [showItems, setShowItems] = useState(false);
   const categories = props.data;
+  const handleClick = () => {
+    setShowItems(!showItems);
+  };
   return (
     <div>
-      <div className="w-6/12 mx-auto my-4 bg-gray-50 shadow-lg p-4">
-        <div className="flex justify-between">
+      <div className="w-6/12 mx-auto my-4 bg-gray-50 shadow-2xl p-4">
+        <div
+          className="flex justify-between cursor-pointer"
+          onClick={handleClick}
+        >
           {" "}
           <span className="font-bold text-2xl">
             {categories?.title} ({categories?.itemCards?.length})
@@ -12,7 +20,7 @@ const RestaurantCategory = (props) => {
           <span className="text-3xl">⬇️</span>
         </div>
 
-        <ItemList items={categories?.itemCards || []} />
+        {showItems && <ItemList items={categories?.itemCards || []} />}
       </div>
     </div>
   );
