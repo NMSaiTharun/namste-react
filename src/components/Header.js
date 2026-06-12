@@ -9,8 +9,6 @@ const Header = () => {
   const userData = useContext(UserContext);
   console.log(userData);
 
-  console.log("online/offline check");
-
   //Subscribing to the store using a selector
   const cartItems = useSelector((store) => store.cart.items);
   console.log(cartItems);
@@ -36,9 +34,11 @@ const Header = () => {
           <li className="text-lg font-medium text-white hover:text-orange-300 transition-colors">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li className="text-lg font-medium text-white hover:text-orange-300 transition-colors cursor-pointer">
-            🛒 Cart ({cartItems.length})
-          </li>
+          <Link to="/cart">
+            <li className="text-lg font-medium text-white hover:text-orange-300 transition-colors cursor-pointer">
+              🛒 Cart ({cartItems.length})
+            </li>
+          </Link>
         </ul>
         <button
           className="bg-white hover:bg-orange-300 text-red-500 text-lg font-semibold px-4 py-2 rounded-full transition-colors"

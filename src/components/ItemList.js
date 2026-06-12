@@ -9,9 +9,9 @@ const getRatingColor = (rating) => {
 
 const ItemList = ({ items }) => {
   const dispatch = useDispatch();
-  const handleAddItem = () => {
+  const handleAddItem = (item) => {
     // dispatch an action
-    dispatch(addItem("pizza"));
+    dispatch(addItem(item));
   };
   return (
     <div>
@@ -67,7 +67,7 @@ const ItemList = ({ items }) => {
                 />
                 <button
                   className="absolute bottom-1 left-1/2 -translate-x-1/2 bg-white text-green-600 font-bold text-xl px-6 py-1 rounded-lg shadow-md w-32 hover:bg-gray-200 text cursor-pointer"
-                  onClick={handleAddItem}
+                  onClick={() => handleAddItem(item)}
                 >
                   ADD
                 </button>
