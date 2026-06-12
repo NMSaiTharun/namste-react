@@ -1,10 +1,18 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
+import { addItem } from "../utils/cartSlice";
 const getRatingColor = (rating) => {
   if (rating >= 4) return "text-green-800";
   if (rating >= 3) return "text-green-400";
   return "text-yellow-400";
 };
+
 const ItemList = ({ items }) => {
+  const dispatch = useDispatch();
+  const handleAddItem = () => {
+    // dispatch an action
+    dispatch(addItem("pizza"));
+  };
   return (
     <div>
       <div>
@@ -57,7 +65,10 @@ const ItemList = ({ items }) => {
                   className="rounded-lg"
                   src={CDN_URL + item.card.info.imageId}
                 />
-                <button className="absolute bottom-1 left-1/2 -translate-x-1/2 bg-white text-green-600 font-bold text-xl px-6 py-1 rounded-lg shadow-md w-32 hover:bg-gray-200 text cursor-pointer">
+                <button
+                  className="absolute bottom-1 left-1/2 -translate-x-1/2 bg-white text-green-600 font-bold text-xl px-6 py-1 rounded-lg shadow-md w-32 hover:bg-gray-200 text cursor-pointer"
+                  onClick={handleAddItem}
+                >
                   ADD
                 </button>
               </div>
