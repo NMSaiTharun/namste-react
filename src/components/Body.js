@@ -20,7 +20,7 @@ const Body = () => {
     setListOfRestaurants(
       jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants,
     );
-    console.log("The json data is: {0}", jsonData);
+    // console.log("The json data is: {0}", jsonData);
     setFilteredRestaurants(
       jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants,
     );

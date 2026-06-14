@@ -13,7 +13,7 @@ class UserClass extends React.Component {
     //console.log(this.props.name + " Constructor is invoked");
   }
   async componentDidMount() {
-    console.log(this.props.name + " componentDidMount is invoked");
+    //console.log(this.props.name + " componentDidMount is invoked");
     const data = await fetch("https://api.github.com/users/NMSaiTharun");
     const json = await data.json();
     this.setState({

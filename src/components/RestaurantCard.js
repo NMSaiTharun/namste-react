@@ -27,9 +27,9 @@ const RestaurantCard = (props) => {
 };
 // Higher Order Component
 export const withPromotedLabel = (RestaurantCard) => {
-  console.log(RestaurantCard);
+  //console.log(RestaurantCard);
   return (props) => {
-    console.log(props);
+    //console.log(props);
 
     return (
       <div className="relative">

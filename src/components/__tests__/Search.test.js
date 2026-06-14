@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 import Body from "../Body";
 import { BrowserRouter } from "react-router-dom";
 import MOCK_DATA from "../mocks/mockResListData.json";
-import { act } from "react-dom/test-utils";
+import { act } from "react";
 
 global.fetch = jest.fn(() => {
   return Promise.resolve({

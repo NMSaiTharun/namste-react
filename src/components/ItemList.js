@@ -19,6 +19,7 @@ const ItemList = ({ items }) => {
         {items.map((item) => (
           <div
             key={item.card.info.id}
+            data-testid="foodItems"
             className="py-2 my-2 border-b-4 border-gray-200 text-left"
           >
             <div className="flex justify-between">

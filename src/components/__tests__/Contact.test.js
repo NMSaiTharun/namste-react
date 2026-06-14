@@ -3,6 +3,18 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 describe("Contact Us Page Test Cases", () => {
+  beforeAll(() => {
+    console.log("Before All");
+  });
+  beforeEach(() => {
+    console.log("Before Each");
+  });
+  afterAll(() => {
+    console.log("After All");
+  });
+  afterEach(() => {
+    console.log("After Each");
+  });
   test("Should Load Contact us component", () => {
     render(<Contact />);
     const heading = screen.getByRole("heading");
