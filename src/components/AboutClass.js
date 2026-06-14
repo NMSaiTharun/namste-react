@@ -5,13 +5,13 @@ import UserClass from "./UserClass";
 export default class AboutClass extends React.Component {
   constructor(params) {
     super(params);
-    console.log("Parent Constructor is invoked");
+    //console.log("Parent Constructor is invoked");
   }
   componentDidMount() {
-    console.log("Parent componentDidMount is invoked");
+    //console.log("Parent componentDidMount is invoked");
   }
   render() {
-    console.log("Parent render is invoked");
+    //console.log("Parent render is invoked");
     return (
       <div>
         <User name={"Sai Tharun"} location={"D"} />

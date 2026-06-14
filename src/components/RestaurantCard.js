@@ -6,7 +6,10 @@ const RestaurantCard = (props) => {
   const actualData = props.resData.info;
   //console.log(actualData);
   return (
-    <div className="m-4 p-4 w-[500px] rounded-lg bg-gray-100 hover:bg-gray-200">
+    <div
+      data-testid="resCard"
+      className="m-4 p-4 w-[500px] rounded-lg bg-gray-100 hover:bg-gray-200"
+    >
       <Link to={"restaurants/" + actualData.id}>
         <img
           className="rounded-lg cursor-pointer"

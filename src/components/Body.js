@@ -12,7 +12,6 @@ const Body = () => {
     fetchData();
   }, []);
   const fetchData = async () => {
-    console.log("fetching data from API");
     const data = await fetch(
       "/api/dapi/restaurants/list/v5?lat=12.956924&lng=77.701127&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
     );
@@ -21,13 +20,14 @@ const Body = () => {
     setListOfRestaurants(
       jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants,
     );
+    console.log("The json data is: {0}", jsonData);
     setFilteredRestaurants(
       jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants,
     );
   };
   // Conditional Rendering
   const onlineStatus = useOnlineStatus();
-  console.log(onlineStatus);
+  //console.log(onlineStatus);
   if (onlineStatus == false) {
     return (
       <h1>Looks Like you're offline, please check internet connection!</h1>
@@ -42,6 +42,7 @@ const Body = () => {
         <div className="search m-4 p-4">
           <input
             type="text"
+            data-testid="searchInput"
             value={searchText}
             className="search border border-gray-300 m-4 p-4 rounded-lg"
             onChange={(e) => {
@@ -52,7 +53,7 @@ const Body = () => {
               setFilteredRestaurants(filteredRestaurant);
             }}
             onKeyDown={(e) => {
-              console.log("Enter Event");
+              // console.log("Enter Event");
               if (e.key === "Enter") {
                 let filteredRestaurant = listOfRestaurants.filter((a) =>
                   a.info.name.toLowerCase().includes(searchText.toLowerCase()),
@@ -64,12 +65,12 @@ const Body = () => {
           <button
             className="px-4 py-2 bg-green-600 m-4 rounded-lg cursor-pointer"
             onClick={() => {
-              console.log(searchText);
-              console.log(listOfRestaurants);
+              //console.log(searchText);
+              // console.log(listOfRestaurants);
               let filteredRestaurant = listOfRestaurants.filter((a) =>
                 a.info.name.toLowerCase().includes(searchText.toLowerCase()),
               );
-              console.log(filteredRestaurant);
+              // console.log(filteredRestaurant);
               setFilteredRestaurants(filteredRestaurant);
             }}
           >
@@ -80,11 +81,11 @@ const Body = () => {
           <button
             className="px-4 py-2 bg-gray-600 m-4 rounded-lg cursor-pointer"
             onClick={() => {
-              console.log(listOfRestaurants);
+              //console.log(listOfRestaurants);
               let filteredList = listOfRestaurants.filter(
                 (a) => a.info.avgRating > 4,
               );
-              console.log(filteredList);
+              //console.log(filteredList);
               setFilteredRestaurants(filteredList);
             }}
           >

@@ -10,7 +10,7 @@ class UserClass extends React.Component {
         login: "Waiting for Username",
       },
     };
-    console.log(this.props.name + " Constructor is invoked");
+    //console.log(this.props.name + " Constructor is invoked");
   }
   async componentDidMount() {
     console.log(this.props.name + " componentDidMount is invoked");
@@ -19,19 +19,19 @@ class UserClass extends React.Component {
     this.setState({
       userInfo: json,
     });
-    console.log(json);
+    //console.log(json);
   }
   componentDidUpdate() {
-    console.log("componetDidUpdate is invoked");
+    //console.log("componetDidUpdate is invoked");
   }
   componentWillUnmount() {
-    console.log("component mounting is ended");
+    //console.log("component mounting is ended");
   }
 
   render() {
     const { name, location } = this.props;
     const { count, count2 } = this.state;
-    console.log(this.props.name + " render is invoked");
+    //console.log(this.props.name + " render is invoked");
     return (
       <div className="user-card">
         <h1>Count from useState: {this.state.count}</h1>

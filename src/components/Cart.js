@@ -6,7 +6,7 @@ import { removeItem } from "../utils/cartSlice";
 const Cart = () => {
   const cartSelector = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
-  console.log(cartSelector);
+  //console.log(cartSelector);
   return (
     <div className="text-center m-4 p-4">
       <h1 className="text-2xl font-bold">Cart Items</h1>
