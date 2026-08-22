@@ -18,7 +18,7 @@
   "type": "commonjs",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html",
+    "build": "parcel build index.html && node scripts/copy-swa-config.js",
     "test": "jest",
     "watch-test": "jest --watch --watchAll"
   },
@@ -45,5 +45,8 @@
   },
   "browserslist": [
     "last 2 chrome version"
-  ]
+  ],
+  "engines": {
+    "node": ">=20"
+  }
 }

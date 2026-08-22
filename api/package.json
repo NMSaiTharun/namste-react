@@ -1,0 +1,7 @@
+{
+  "name": "namste-react-api",
+  "version": "1.0.0",
+  "description": "Managed Azure Function that proxies Swiggy dapi calls for the static site.",
+  "main": "proxy/index.js",
+  "private": true
+}

@@ -1,0 +1,15 @@
+{
+  "platform": {
+    "apiRuntime": "node:20"
+  },
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/api/*",
+      "/*.{css,js,map,json,txt,ico,png,jpg,jpeg,gif,svg,webp,avif,woff,woff2,ttf,eot}"
+    ]
+  },
+  "globalHeaders": {
+    "cache-control": "no-cache"
+  }
+}
