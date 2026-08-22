@@ -6,7 +6,7 @@ import Cart from "../Cart";
 import MOCK_DATA from "../../utils/menu.json";
 import { Provider } from "react-redux";
 import appStore from "../../utils/appStore";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router";
 import "@testing-library/jest-dom";
 // Not needed below fetch since I am not using fetch while fetching the data, I am using hardcoded data
 // global.fetch = jest.fn(() => {

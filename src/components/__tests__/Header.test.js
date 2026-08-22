@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import Header from "../Header";
 import appStore from "../../utils/appStore";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router";
 import "@testing-library/jest-dom";
 
 it("Should render Header Component with a Login button", () => {

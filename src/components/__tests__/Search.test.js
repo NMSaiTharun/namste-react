@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Body from "../Body";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router";
 import MOCK_DATA from "../mocks/mockResListData.json";
 import { act } from "react";
 

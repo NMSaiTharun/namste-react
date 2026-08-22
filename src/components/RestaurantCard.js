@@ -1,5 +1,5 @@
 import { CDN_URL } from "../utils/constants";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 const RestaurantCard = (props) => {
   //console.log("The original object is {0}", props);
   const { name, cuisines, costForTwo, avgRatingString } = props.resData.info;
