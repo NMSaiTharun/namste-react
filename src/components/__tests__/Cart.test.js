@@ -8,15 +8,10 @@ import { Provider } from "react-redux";
 import appStore from "../../utils/appStore";
 import { BrowserRouter } from "react-router";
 import "@testing-library/jest-dom";
-// Not needed below fetch since I am not using fetch while fetching the data, I am using hardcoded data
-// global.fetch = jest.fn(() => {
-//   return Promise({
-//     json: Promise.resolve(MOCK_DATA),
-//   });
-// });
 
-it("should load restaurant menu component", async () => {
-  //the act is for useEffect,useState hooks
+const MENU_ITEM_COUNT = 17;
+
+const renderApp = async () => {
   await act(async () =>
     render(
       <BrowserRouter>
@@ -28,22 +23,62 @@ it("should load restaurant menu component", async () => {
       </BrowserRouter>,
     ),
   );
-  const accordianHeader = screen.getByText("Recommended (17)");
-  fireEvent.click(accordianHeader);
+  fireEvent.click(screen.getByText(`Recommended (${MENU_ITEM_COUNT})`));
+};
 
-  expect(screen.getAllByTestId("foodItems").length).toBe(17);
+// Each click targets the first item that is still showing ADD, so distinct
+// menu items land in the cart.
+const addFirstAvailableItem = () =>
+  fireEvent.click(screen.getAllByRole("button", { name: "ADD" })[0]);
 
-  const addBtns = screen.getAllByRole("button", { name: "ADD" });
-  fireEvent.click(addBtns[0]);
-  fireEvent.click(addBtns[2]);
+it("should add distinct items to the cart and total their quantities", async () => {
+  await renderApp();
 
-  fireEvent.click(addBtns[5]);
-  fireEvent.click(addBtns[5]);
+  expect(screen.getAllByTestId("foodItems").length).toBe(MENU_ITEM_COUNT);
 
-  const cartText = screen.getByText("🛒 Cart (4)");
-  expect(cartText).toBeInTheDocument();
+  addFirstAvailableItem();
+  addFirstAvailableItem();
+  addFirstAvailableItem();
 
-  expect(screen.getAllByTestId("foodItems").length).toBe(21);
+  // Bump the first item to a quantity of 2, so units (4) and lines (3) differ.
+  fireEvent.click(screen.getAllByRole("button", { name: /^Increase quantity/ })[0]);
+
+  expect(screen.getByText("🛒 Cart (4)")).toBeInTheDocument();
+
+  // 17 menu rows plus 3 distinct cart lines.
+  expect(screen.getAllByTestId("foodItems").length).toBe(MENU_ITEM_COUNT + 3);
+
   fireEvent.click(screen.getByRole("button", { name: "Clear All" }));
-  expect(screen.getAllByTestId("foodItems").length).toBe(17);
+  expect(screen.getAllByTestId("foodItems").length).toBe(MENU_ITEM_COUNT);
+  expect(screen.getByText("🛒 Cart (0)")).toBeInTheDocument();
+});
+
+it("should swap ADD for a quantity stepper and back again at zero", async () => {
+  await renderApp();
+
+  const addButtonsBefore = screen.getAllByRole("button", { name: "ADD" }).length;
+  addFirstAvailableItem();
+
+  // ADD is replaced by the stepper for that item, in both menu and cart.
+  expect(screen.getAllByRole("button", { name: "ADD" }).length).toBe(
+    addButtonsBefore - 1,
+  );
+  expect(screen.getAllByTestId("itemQuantity")[0]).toHaveTextContent("1");
+  expect(screen.getByText("🛒 Cart (1)")).toBeInTheDocument();
+
+  // Increment, then decrement twice to walk it back down to zero.
+  fireEvent.click(screen.getAllByRole("button", { name: /^Increase quantity/ })[0]);
+  expect(screen.getAllByTestId("itemQuantity")[0]).toHaveTextContent("2");
+
+  fireEvent.click(screen.getAllByRole("button", { name: /^Decrease quantity/ })[0]);
+  expect(screen.getAllByTestId("itemQuantity")[0]).toHaveTextContent("1");
+
+  fireEvent.click(screen.getAllByRole("button", { name: /^Decrease quantity/ })[0]);
+
+  // Back to zero: the stepper is gone and ADD has returned.
+  expect(screen.queryAllByTestId("itemQuantity").length).toBe(0);
+  expect(screen.getAllByRole("button", { name: "ADD" }).length).toBe(
+    addButtonsBefore,
+  );
+  expect(screen.getByText("🛒 Cart (0)")).toBeInTheDocument();
 });

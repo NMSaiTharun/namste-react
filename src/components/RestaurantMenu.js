@@ -40,11 +40,11 @@ const RestaurantMenu = () => {
     setCategoriesData(categoriesDataFromMenuData);
   }, []);
   return (
-    <div className="text-center">
-      <h1 className="font-bold my-6 text-2xl">
+    <div className="text-center px-3 sm:px-4">
+      <h1 className="font-bold my-4 sm:my-6 text-xl sm:text-2xl">
         {restaurantData?.data?.cards[2]?.card?.card?.info?.name}
       </h1>
-      <p className="font-bold text-lg">
+      <p className="font-bold text-sm sm:text-lg">
         {restaurantData?.data?.cards[2]?.card?.card?.info?.cuisines.join(",")}{" "}
         {" | "}
         {restaurantData?.data?.cards[2]?.card?.card?.info?.costForTwoMessage}

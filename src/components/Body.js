@@ -30,7 +30,9 @@ const Body = () => {
   //console.log(onlineStatus);
   if (onlineStatus == false) {
     return (
-      <h1>Looks Like you're offline, please check internet connection!</h1>
+      <h1 className="text-center text-lg font-bold p-4">
+        Looks Like you&apos;re offline, please check internet connection!
+      </h1>
     );
   }
 
@@ -38,13 +40,13 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter flex">
-        <div className="search m-4 p-4">
+      <div className="filter flex flex-col sm:flex-row sm:flex-wrap sm:items-center px-3">
+        <div className="search flex flex-col sm:flex-row sm:items-center gap-2 my-2 sm:m-4 sm:p-4 w-full sm:w-auto">
           <input
             type="text"
             data-testid="searchInput"
             value={searchText}
-            className="search border border-gray-300 m-4 p-4 rounded-lg"
+            className="search border border-gray-300 p-3 sm:p-4 rounded-lg w-full sm:w-auto"
             onChange={(e) => {
               setSearchText(e.target.value);
               let filteredRestaurant = listOfRestaurants.filter((a) =>
@@ -63,7 +65,7 @@ const Body = () => {
             }}
           />
           <button
-            className="px-4 py-2 bg-green-600 m-4 rounded-lg cursor-pointer"
+            className="px-4 py-2 bg-green-600 text-white rounded-lg cursor-pointer w-full sm:w-auto"
             onClick={() => {
               //console.log(searchText);
               // console.log(listOfRestaurants);
@@ -77,9 +79,9 @@ const Body = () => {
             Search
           </button>
         </div>
-        <div className="search m-4 p-4 flex items-center">
+        <div className="search my-2 sm:m-4 sm:p-4 flex items-center w-full sm:w-auto">
           <button
-            className="px-4 py-2 bg-gray-600 m-4 rounded-lg cursor-pointer"
+            className="px-4 py-2 bg-gray-600 text-white rounded-lg cursor-pointer w-full sm:w-auto"
             onClick={() => {
               //console.log(listOfRestaurants);
               let filteredList = listOfRestaurants.filter(
@@ -93,7 +95,7 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-wrap">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-3 sm:p-4">
         {filteredRestaurants.map((restaurant, index) =>
           true ? (
             <RestaurantCardPromoted
