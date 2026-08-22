@@ -44,7 +44,8 @@
     "tailwindcss": "^4.3.0"
   },
   "browserslist": [
-    "last 2 chrome version"
+    "defaults",
+    "not dead"
   ],
   "engines": {
     "node": ">=20"
